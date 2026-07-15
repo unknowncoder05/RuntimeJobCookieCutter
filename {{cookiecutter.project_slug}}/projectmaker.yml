@@ -34,3 +34,8 @@ units:
         description: "Repository-relative file path where readings are appended."
         required: true
         default: "{{ cookiecutter.output_path }}"
+    artifacts:
+      readings:
+        name: "Runtime readings"
+        type: file
+        path: "{{ cookiecutter.output_path }}"
