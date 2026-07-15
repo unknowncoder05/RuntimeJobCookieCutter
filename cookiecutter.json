@@ -1,0 +1,19 @@
+{
+  "project_name": "Runtime Job",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_slug_dashed": "{{ cookiecutter.project_slug.replace('_', '-') }}",
+  "job_name": "{{ cookiecutter.project_name }}",
+  "job_key": "{{ cookiecutter.project_slug_dashed }}",
+  "job_description": "A scheduled Python runtime job.",
+  "api_url": "http://api.open-notify.org/iss-now.json",
+  "output_path": "data/runtime_events.jsonl",
+  "schedule_interval_seconds": "60",
+  "author_name": "Your Name",
+  "author_email": "your@email.com",
+  "_copy_without_render": [
+    ".git",
+    "*.jsonl",
+    "__pycache__",
+    ".venv"
+  ]
+}

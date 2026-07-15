@@ -1,0 +1,36 @@
+version: "1"
+
+units:
+  {{ cookiecutter.job_key }}:
+    name: "{{ cookiecutter.job_name }}"
+    kind: scheduled_job
+    language: python
+    root: .
+    commands:
+      run:
+        label: "Run job"
+        description: "Call the configured API once and append the result as JSONL."
+        run: "python scripts/run_job.py"
+      test:
+        label: "Test job"
+        description: "Compile and run unit tests for the runtime job."
+        run: "python -m py_compile scripts/run_job.py && python -m unittest discover -s tests"
+    schedule:
+      command: run
+      interval_seconds: {{ cookiecutter.schedule_interval_seconds }}
+      timezone: UTC
+      timeout_seconds: 30
+      retries: 1
+    env:
+      JOB_API_URL:
+        type: url
+        label: "API URL"
+        description: "Endpoint called once per runtime execution."
+        required: true
+        default: "{{ cookiecutter.api_url }}"
+      JOB_OUTPUT_PATH:
+        type: string
+        label: "Output JSONL path"
+        description: "Repository-relative file path where readings are appended."
+        required: true
+        default: "{{ cookiecutter.output_path }}"
