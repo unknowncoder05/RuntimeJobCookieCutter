@@ -10,11 +10,11 @@ units:
       run:
         label: "Run job"
         description: "Call the configured API once and append the result as JSONL."
-        run: "python scripts/run_job.py"
+        run: "python3 scripts/run_job.py"
       test:
         label: "Test job"
         description: "Compile and run unit tests for the runtime job."
-        run: "python -m py_compile scripts/run_job.py && python -m unittest discover -s tests"
+        run: "python3 -m py_compile scripts/run_job.py && python3 -m unittest discover -s tests"
     schedule:
       command: run
       interval_seconds: {{ cookiecutter.schedule_interval_seconds }}
