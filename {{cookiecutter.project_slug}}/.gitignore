@@ -1,0 +1,76 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build and packaging outputs
+build/
+dist/
+sdist/
+wheels/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Test and coverage outputs
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+cover/
+.tox/
+.nox/
+
+# Runtime data and local outputs
+data/*
+!data/.gitkeep
+outputs/
+tmp/
+*.log
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Editors and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Deployment and infrastructure tooling
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+tfplan
+terraform.tfplan
+crash.log
+crash.*.log
+
+# ProjectMaker / CodeSwarm generated local files
+.projectmaker.*.env
+docker-compose.projectmaker.dev.yml
+.last-deploy
+.deploy-config
