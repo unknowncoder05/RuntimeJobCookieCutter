@@ -6,6 +6,12 @@ units:
     kind: scheduled_job
     language: python
     root: .
+    compute:
+      lambda:
+        runtime: python3.12
+        architecture: x86_64
+        memory_mb: 128
+        timeout_seconds: 30
     commands:
       run:
         label: "Run job"
